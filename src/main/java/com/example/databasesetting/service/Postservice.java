@@ -1,5 +1,6 @@
 package com.example.databasesetting.service;
 
+import com.example.databasesetting.mapper.PostMapper;
 import com.example.databasesetting.model.Post;
 import com.example.databasesetting.repository.PostRepository;
 import lombok.RequiredArgsConstructor;
@@ -14,15 +15,15 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class Postservice {
     private final PostRepository postRepository;
+    private final PostMapper postMapper;
 
     public List<Post> postList() {
-        return postRepository.findAll();
+//        return postRepository.findAll();
+        return postMapper.listPost();
     }
 
 /*    @Autowired
     public Postservice(PostRepository postRepository){
         this.postRepository = postRepository;
     }*/
-
-
 }
