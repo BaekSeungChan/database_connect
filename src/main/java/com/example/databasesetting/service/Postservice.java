@@ -17,9 +17,10 @@ public class Postservice {
     private final PostRepository postRepository;
     private final PostMapper postMapper;
 
-    public List<Post> postList() {
-//        return postRepository.findAll();
-        return postMapper.listPost();
+    public List<Post> postList(String title) {
+//        return postRepository.findByTitle(title);
+        return  postRepository.findByTitleContains(title);
+//        return postMapper.listPost();
     }
 
 /*    @Autowired
